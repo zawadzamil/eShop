@@ -41,7 +41,7 @@
                         <td>{{$product['description']}}</td>
                         <td>{{$product['status']}}</td>
                         <td>{{$product['offer_price']}}</td>
-                        <td><button class="btn btn-dark btn-sm">Edit</button></td>
+                        <td><a href="edit/{{$product['id']}}">Edit</a></td>
                         <td><a href="delete/{{$product['id']}}">Delete</a></td>
 
 

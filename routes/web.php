@@ -21,6 +21,9 @@ Route::get('/add_product', 'App\Http\Controllers\DashboardController@addProduct'
 Route::post('/add_product_to_database', 'App\Http\Controllers\ProductController@store');
 Route::get('/all_products', 'App\Http\Controllers\DashboardController@allProducts');
 Route::get('delete/{id}','App\Http\Controllers\ProductController@destroy');
+Route::post('updateProduct/{id}','App\Http\Controllers\ProductController@update');
+
+Route::get('edit/{id}','App\Http\Controllers\DashboardController@find');
 
 
 

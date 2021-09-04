@@ -71,9 +71,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -83,9 +83,22 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $image = $request->file('image');
+        $image_name = md5(time().rand()).".".$image ->getClientOriginalExtension();
+        $request->image-> move(public_path('images'), $image_name);
+
+        $update = Product::find($id);
+        $update->name = $request->get('name');
+        $update->price = $request->get('price');
+        $update->image = $image_name;
+        $update->quantity = $request->get('quantity');
+        $update->description = $request->get('description');
+        $update->status = $request->get('status');
+        $update->offer_price = $request->get('offer_price');
+        $update->save();
+        return redirect()->route('dashboard');
     }
 
     /**
