@@ -44,10 +44,12 @@ class ProductController extends Controller
             'price' => $request['price'],
             'image' => $image_name,
 
-            'quantity' =>$request['quantity'],
-            'description' =>$request['description'],
-            'status' =>$request['status'],
-            'offer_price' =>$request['offer_price'],
+            'quantity' => $request['quantity'],
+            'description' => $request['description'],
+            'status' => $request['status'],
+            'offer_price' => $request['offer_price'],
+            'catagory_id' => $request['catagory_id'],
+            'brand_id' => $request['brand_id'],
         ]);
         $product ->save();
         return redirect()->back()->with('success', ' Data is Saved Successfully');
