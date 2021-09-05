@@ -24,6 +24,8 @@ class CreateProductsTable extends Migration
             $table->integer('offer_price')->default(0);
             $table->integer('catagory_id')->unsigned()->default(0);
             $table->integer('brand_id')->unsigned()->default(1);
+            $table->foreign('catagory_id')->references('id')->on('catagories');
+            $table->foreign('brand_id')->references('id')->on('brands');
             $table->timestamps();
         });
     }
