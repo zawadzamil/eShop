@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -14,7 +15,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+
+        if (Auth::user()->hasRole('user')) {
+            return view('userDashboard');
+        } elseif (Auth::user()->hasRole('admin')) {
+            return view('admin.allProducts');
+        }
+
     }
 
     /**
@@ -106,12 +113,24 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
     public function destroy($product)
     {
-       Product::destroy($product);
+        Product::destroy($product);
         return redirect()->back()->with('success', ' Data is Deleted Successfully');
+    }
+
+    public function findCatagorywise($id)
+    {
+
+
+        $productData = Product::where('catagory_id', '=', $id)
+            ->get();
+
+
+        return view('admin.catagorywiseProduct')->with('productData', $productData);
+
     }
 }

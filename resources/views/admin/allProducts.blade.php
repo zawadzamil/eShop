@@ -1,4 +1,4 @@
-@extends('admin_dashboard')
+@extends('admin.admin_dashboard')
 @section('admin_panel_section')
 
     <div class=" " style="width: 70%;height: 100%;text-align:center;  text-align: center;margin-left: 50%;margin-right: 50%;margin: auto;">
@@ -32,22 +32,22 @@
                 </tr>
                 @foreach($products as $product)
 
-                <tr>
+                    <tr>
 
                         <td>{{$product['name']}}</td>
                         <td>{{$product['price']}}</td>
-                        <td><img src="public/images/{{$product['image']}}" alt="" border="3" height="100" width="100" /></td>
+                        <td><img src="public/images/{{$product['image']}}" alt="" border="3" height="100" width="100"/>
+                        </td>
                         <td>{{$product['quantity']}}</td>
                         <td>{{$product['description']}}</td>
                         <td>{{$product['status']}}</td>
                         <td>{{$product['offer_price']}}</td>
-                        <td><a href="edit/{{$product['id']}}">Edit</a></td>
+                        <td><a href="{{route('editProduct',$product->id)}}">Edit</a></td>
                         <td><a href="delete/{{$product['id']}}">Delete</a></td>
 
 
-
-                </tr>
-                    @endforeach
+                    </tr>
+                @endforeach
 
 
             </table>

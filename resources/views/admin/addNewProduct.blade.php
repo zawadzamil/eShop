@@ -1,4 +1,4 @@
-@extends('admin_dashboard')
+@extends('admin.admin_dashboard')
 @section('admin_panel_section')
 
     <div class=" " style="width: 70%;height: 100%; text-align: center;margin-left: 50%;margin-right: 50%;margin: auto;">

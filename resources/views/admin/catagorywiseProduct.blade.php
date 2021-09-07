@@ -247,6 +247,8 @@
 
 
                             <!-- ADMIN  PANEL SECTION  -->
+
+
                             <div class=" "
                                  style="width: 70%;height: 100%;text-align:center;  text-align: center;margin-left: 50%;margin-right: 50%;margin: auto;">
                                 @if (\Session::has('success'))
@@ -265,46 +267,38 @@
                                 @endif
 
 
-                                <form action="{{url('updateProduct',$data ->id)}}" method="POST"
-                                      enctype="multipart/form-data" style="margin-top: 5%;">
-                                    @csrf
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Product Name</label>
-                                        <input type="text" name="name" class="form-control" id="name"
-                                               value="{{$data ->name}} " required>
+                                <table class="table table-dark table-striped" style="margin-top: 5%;">
+                                    <tr>
+                                        <th> Product Name</th>
+                                        <th> Price</th>
+                                        <th> Image</th>
+                                        <th> Quantity</th>
+                                        <th> Description</th>
+                                        <th> Status</th>
+                                        <th> Offer Price</th>
 
-                                        <div class="mb-3">
-                                            <label for="price" class="form-label">Price</label>
-                                            <input type="text" name="price" class="form-control" id="price"
-                                                   value="{{$data ->price}}" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="image" class="form-label">Image</label>
-                                            <input type="file" name="image" class="form-control" id="image">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="quantity" class="form-label">Quantity</label>
-                                            <input type="text" name="quantity" class="form-control" id="quantity"
-                                                   value="{{$data ->quantity}}" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="description" class="form-label">Description</label>
-                                            <textarea name="description" class="form-control" id="description"
-                                                      value="{{$data ->description}} "></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="status" class="form-label">Status</label>
-                                            <input name="status" class="form-control" id="status"
-                                                   value="{{$data ->status}} " required></div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="offer_price" class="form-label">Offer Price</label>
-                                        <input type="text" name="offer_price" class="form-control" id="offer_price"
-                                               value="{{$data ->offer_price}} " required>
-                                    </div>
+                                    </tr>
+                                    @foreach($productData as $product)
 
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
+                                        <tr>
+
+                                            <td>{{$product['name']}}</td>
+                                            <td>{{$product['price']}}</td>
+                                            <td><img src="../../public/images/{{$product['image']}}" alt="" border="3"
+                                                     height="100" width="100"/></td>
+                                            <td>{{$product['quantity']}}</td>
+                                            <td>{{$product['description']}}</td>
+                                            <td>{{$product['status']}}</td>
+                                            <td>{{$product['offer_price']}}</td>
+
+
+                                        </tr>
+                                    @endforeach
+
+
+                                </table>
+
+
                             </div>
 
 

@@ -24,13 +24,14 @@ Route::post('/add_product_to_database', 'App\Http\Controllers\ProductController@
 Route::get('/all_products', 'App\Http\Controllers\DashboardController@allProducts');
 Route::get('delete/{id}', 'App\Http\Controllers\ProductController@destroy');
 Route::post('updateProduct/{id}', 'App\Http\Controllers\ProductController@update');
-Route::get('edit/{id}', 'App\Http\Controllers\DashboardController@find');
+Route::get('admin/editProduct/{id}', 'App\Http\Controllers\DashboardController@find')->name('editProduct');
 
 
+Route::get('admin/catagorywiseProduct/{id}', 'App\Http\Controllers\ProductController@findCatagorywise')->name('catagorywiseProduct');
 
 
 //auth route for both
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 });
 

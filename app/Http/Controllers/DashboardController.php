@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -16,7 +17,7 @@ class DashboardController extends Controller
         }
         elseif(Auth::user()->hasRole('admin'))
         {
-            return view('admin_dashboard');
+            return view('admin.admin_dashboard');
         }
     }
     public function shop()
@@ -47,14 +48,25 @@ class DashboardController extends Controller
     }
     public function find($id)
     {
-        if(Auth::user()->hasRole('user'))
-        {
+        if (Auth::user()->hasRole('user')) {
             return view('userDashboard');
-        }
-        elseif(Auth::user()->hasRole('admin'))
-        {
+        } elseif (Auth::user()->hasRole('admin')) {
             $data = Product::find($id);
-            return view('admin.editProduct')->with('data',$data);
+            return view('admin.editProduct')->with('data', $data);
+        }
+    }
+
+    public function findCatagorywise()
+    {
+        if (Auth::user()->hasRole('user')) {
+            return view('userDashboard');
+        } elseif (Auth::user()->hasRole('admin')) {
+
+
+            $productData = Product::orderBy('id')->get();
+
+
+            return view('admin.catagorywiseProduct')->with('productData', $productData);
         }
     }
 }
