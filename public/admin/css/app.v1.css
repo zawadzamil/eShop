@@ -14858,3 +14858,7 @@ body.container {
 nav.batch268 ul li a {
     color: #FFF !important;
 }
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}

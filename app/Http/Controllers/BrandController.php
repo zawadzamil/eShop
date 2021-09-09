@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -34,7 +35,17 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image = $request->file('image');
+        $image_name = md5(time() . rand()) . "." . $image->getClientOriginalExtension();
+        $request->image->move(public_path('images'), $image_name);
+
+        $brand = Brand::create([
+            'name' => $request['name'],
+            'image' => $image_name,
+            'description' => $request['description'],
+        ]);
+        $brand->save();
+        return redirect()->back()->with('success', ' Data is Saved Successfully');
     }
 
     /**

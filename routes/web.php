@@ -30,9 +30,18 @@ Route::get('admin/editProduct/{id}', 'App\Http\Controllers\DashboardController@f
 Route::get('admin/catagorywiseProduct/{id}', 'App\Http\Controllers\ProductController@findCatagorywise')->name('catagorywiseProduct');
 
 
+/* ----Brand Routes---- */
+Route::get('brand/create', 'App\Http\Controllers\DashboardController@createBrand')->name('create_brand');
+Route::post('brand/add_brand_to_db', 'App\Http\Controllers\BrandController@store')->name('add_brand_to_db');
+Route::get('brand/show', 'App\Http\Controllers\DashboardController@showBrand')->name('showBrands');
+
+
+Route::get('users/users', 'App\Http\Controllers\DashboardController@showUser')->name('showUser');
+
+
 //auth route for both
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -106,15 +106,15 @@
                                                                 alt="..."> </span>{{$name}} <b class="caret"></b> </a>
                 <ul class="dropdown-menu animated fadeInRight">
                     <li><span class="arrow top"></span> <a href="#">Settings</a></li>
-                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="#">Profile</a></li>
                     <li>
                         <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
                     </li>
-                    <li><a href="docs.html">Help</a></li>
+                    <li><a href="#">Help</a></li>
                     <li class="divider"></li>
 
                     <li>
-                            <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
                                 <a href="route('logout')"
@@ -148,15 +148,15 @@
                                     </a>
                                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                         <li><span class="arrow top hidden-nav-xs"></span> <a href="#">Settings</a></li>
-                                        <li><a href="profile.html">Profile</a></li>
+                                        <li><a href="#">Profile</a></li>
                                         <li>
                                             <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications
                                             </a>
                                         </li>
-                                        <li><a href="docs.html">Help</a></li>
+                                        <li><a href="#">Help</a></li>
                                         <li class="divider"></li>
                                         <li>
-                                                <form method="POST" action="{{ route('logout') }}">
+                                            <form method="POST" action="{{ route('logout') }}">
                                                     @csrf
 
                                                     <a href="route('logout')"
@@ -177,20 +177,20 @@
 
                                         <li class="">
                                             <a href="{{url('all_products')}}" class="auto"> <i
-                                                    class="i i-statistics icon"> </i> <span
+                                                    class="fa fa-truck"> </i> <span
                                                     class="font-bold">Products</span> </a>
                                         </li>
                                         <li class="">
                                             <a href="{{url('add_product')}}" class="auto"> <i
-                                                    class="i i-statistics icon"> </i> <span class="font-bold">Add Products</span>
+                                                    class="fa fa-pencil-square-o"> </i> <span class="font-bold">Add Products</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="auto"> <span class="pull-right text-muted"> <i
-                                                        class="i i-circle-sm-o text"></i> <i
+                                                        class="fa fa-chevron-down"></i> <i
                                                         class="i i-circle-sm text-active"></i> </span> <b
                                                     class="badge bg-danger pull-right"></b> <i
-                                                    class="i i-stack icon"> </i> <span
+                                                    class="fa fa-random"> </i> <span
                                                     class="font-bold">Catagories</span> </a>
                                             <ul class="nav dk">
                                                 @php
@@ -202,7 +202,7 @@
                                                 @foreach($catagories as $catagory)
                                                     <li>
                                                         <a href="{{route('catagorywiseProduct',$catagory->id)}}"
-                                                           class="auto"> <i class="i i-dot"></i>
+                                                           class="auto"> <i class="fa fa-bolt"></i>
                                                             <span>{{ $catagory['name']}}</span> </a>
 
 
@@ -210,18 +210,57 @@
                                                 @endforeach
                                             </ul>
                                         </li>
+                                        <li>
+                                            <a href="#" class="auto"> <span class="pull-right text-muted"> <i
+                                                        class="fa fa-chevron-down"></i> <i
+                                                        class="i i-circle-sm text-active"></i> </span> <b
+                                                    class="badge bg-danger pull-right"></b> <i
+                                                    class="fa fa-tags"> </i> <span
+                                                    class="font-bold">Brands</span> </a>
+                                            <ul class="nav dk">
+                                                <li>
+                                                    <a href="{{route('showBrands')}}"
+                                                       class="auto"> <i class="fa fa-bolt"></i>
+                                                        <span>View All Brands</span> </a>
 
 
+                                                </li>
+                                                <li>
+                                                    <a href="{{route('create_brand')}}"
+                                                       class="auto"> <i class="fa fa-bolt"></i>
+                                                        <span>Add New Brand</span> </a>
+
+
+                                                </li>
+
+
+                                                </li>
+
+
+                                            </ul>
+                                        <li>
+                                            <a href="{{route('showUser')}}" class="auto"> <span
+                                                    class="pull-right text-muted">  </span> <b
+                                                    class="badge bg-danger pull-right"></b> <i
+                                                    class="fa fa-user"> </i> <span
+                                                    class="font-bold">Users</span> </a>
+                                        </li>
+
+                                        </li>
                                     </ul>
 
                                 </nav>
-                                <!-- / nav -->
-                            </div>
-                        </section>
-                        <footer class="footer hidden-xs no-padder text-center-nav-xs">
-                            <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs"> <i class="i i-logout"></i> </a>
-                            <a href="#nav" data-toggle="class:nav-xs" class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs"> <i class="i i-circleleft text"></i> <i class="i i-circleright text-active"></i> </a>
-                        </footer>
+                            <!-- / nav -->
+                        </div>
+                    </section>
+                    <footer class="footer hidden-xs no-padder text-center-nav-xs">
+                        <a href="modal.lockme.html" data-toggle="ajaxModal"
+                           class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs"> <i
+                                class="i i-logout"></i> </a>
+                        <a href="#nav" data-toggle="class:nav-xs"
+                           class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs"> <i
+                                class="i i-circleleft text"></i> <i class="i i-circleright text-active"></i> </a>
+                    </footer>
                     </section>
                 </aside>
                 <!-- /.aside -->
@@ -231,10 +270,7 @@
                             <section class="vbox">
 
 
-
-
-
-									<!-- ADMIN  PANEL SECTION  -->
+                            <!-- ADMIN  PANEL SECTION  -->
 
 
 

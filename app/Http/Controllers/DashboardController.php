@@ -69,4 +69,31 @@ class DashboardController extends Controller
             return view('admin.catagorywiseProduct')->with('productData', $productData);
         }
     }
+
+    public function createBrand()
+    {
+        if (Auth::user()->hasRole('user')) {
+            return view('userDashboard');
+        } elseif (Auth::user()->hasRole('admin')) {
+            return view('brand.create');
+        }
+    }
+
+    public function showBrand()
+    {
+        if (Auth::user()->hasRole('user')) {
+            return view('userDashboard');
+        } elseif (Auth::user()->hasRole('admin')) {
+            return view('brand.show');
+        }
+    }
+
+    public function showUser()
+    {
+        if (Auth::user()->hasRole('user')) {
+            return view('userDashboard');
+        } elseif (Auth::user()->hasRole('admin')) {
+            return view('users.users');
+        }
+    }
 }
