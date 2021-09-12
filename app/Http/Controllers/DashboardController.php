@@ -9,14 +9,16 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     public function index()
     {
-        if(Auth::user()->hasRole('user'))
-        {
+        if (Auth::user()->hasRole('user')) {
             return view('userDashboard');
-        }
-        elseif(Auth::user()->hasRole('admin'))
-        {
+        } elseif (Auth::user()->hasRole('admin')) {
             return view('admin.admin_dashboard');
         }
     }
