@@ -13,6 +13,7 @@ use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
+
     /**
      * Display the registration view.
      *
@@ -51,6 +52,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
         $user->attachRole(3);
+
 
         return redirect(RouteServiceProvider::HOME);
     }

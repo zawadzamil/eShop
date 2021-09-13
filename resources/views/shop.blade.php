@@ -2,33 +2,40 @@
 
 @section('main_content')
 
-@php use App\Models\Product;$products = Product::orderBy('id')->get();
-@endphp
+    @php use App\Models\Product;$products = Product::orderBy('id')->get();
+    @endphp
+    @if (Session::has('success'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{!! Session::get('success') !!}</li>
+            </ul>
+        </div>
+    @endif
 
-  <!-- brand section -->
+    <!-- brand section -->
 
-  <section class="brand_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Featured Brands
-        </h2>
-      </div>
-      <div class="brand_container layout_padding2">
-
-@foreach($products as $product)
-        <div class="box">
-          <a href="">
-            <div class="new">
-              <h5>
-                New
-              </h5>
+    <section class="brand_section layout_padding">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                    Featured Brands
+                </h2>
             </div>
-            <div class="img-box">
-              <img src="public/images/{{$product['image']}}" alt="">
-            </div>
-            <div class="detail-box">
-              <h6 class="price">
+            <div class="brand_container layout_padding2">
+
+                @foreach($products as $product)
+                    <div class="box">
+                        <a href="{{route('showProduct',$product->id)}}">
+                            <div class="new">
+                                <h5>
+                                    New
+                                </h5>
+                            </div>
+                            <div class="img-box">
+                                <img src="public/images/{{$product['image']}}" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h6 class="price">
                 {{$product['price']}} BDT
               </h6>
               <h6>

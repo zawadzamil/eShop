@@ -26,6 +26,7 @@ Route::get('/all_products', 'App\Http\Controllers\DashboardController@allProduct
 Route::get('delete/{id}', 'App\Http\Controllers\ProductController@destroy');
 Route::post('updateProduct/{id}', 'App\Http\Controllers\ProductController@update');
 Route::get('admin/editProduct/{id}', 'App\Http\Controllers\DashboardController@find')->name('editProduct');
+Route::get('show_single_product/{id}', 'App\Http\Controllers\ProductController@show')->name('showProduct');
 
 
 Route::get('admin/catagorywiseProduct/{id}', 'App\Http\Controllers\ProductController@findCatagorywise')->name('catagorywiseProduct');
@@ -40,8 +41,11 @@ Route::get('brand/show', 'App\Http\Controllers\DashboardController@showBrand')->
 Route::get('users/users', 'App\Http\Controllers\DashboardController@showUser')->name('showUser');
 
 
+Route::post('addToCart', 'App\Http\Controllers\CartController@store')->name('addToCart');
+
+
 //auth route for both
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 });
 

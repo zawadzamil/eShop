@@ -68,8 +68,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
+        $data = Product::find($id);
+        return view('show_single_product')->with('data', $data);
 
 
     }
