@@ -95,4 +95,12 @@ class DashboardController extends Controller
             return view('users.users');
         }
     }
+    public function showCart()
+    {
+        if (Auth::user()->hasRole('user')) {
+
+            return view('showCartItem');
+            }
+
+    }
 }

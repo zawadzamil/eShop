@@ -56,9 +56,14 @@ class CartController extends Controller
      * @param \App\Models\Cart $cart
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show()
     {
-        //
+        $id = Auth::user()->id;
+        $carts = Cart::where('user_id',$id)->get();
+
+
+        return view('showCartItems')->with('carts',$carts);
+
     }
 
     /**

@@ -42,6 +42,12 @@ Route::get('users/users', 'App\Http\Controllers\DashboardController@showUser')->
 
 
 Route::post('addToCart', 'App\Http\Controllers\CartController@store')->name('addToCart');
+Route::get('viewCart', 'App\Http\Controllers\CartController@show');
+
+
+
+Route::get('checkout','App\Http\Controllers\CheckoutController@checkout');
+Route::post('checkout','App\Http\Controllers\CheckoutController@afterpayment')->name('checkout.credit-card');
 
 
 //auth route for both

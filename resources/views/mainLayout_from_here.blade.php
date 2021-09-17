@@ -36,7 +36,7 @@
     <header class="header_section">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg custom_nav-container">
-                <a class="navbar-brand" href="home.blade.php">
+                <a class="navbar-brand" href="{{url('/')}}">
                     <img src="../public/mainAsset/images/logo.png" alt=""/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -48,7 +48,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  ">
                         <li class="nav-item ">
-                            <a class="nav-link" href="home.blade.php"><p style="color: #218838;   ">Home </p> <span
+                            <a class="nav-link" href="{{url('/')}}"><p style="color: #218838;   ">Home </p> <span
                                     class="sr-only">(current)</span></a>
                         </li>
 
@@ -94,9 +94,19 @@
                         </form>
                     </div>
                     @php
-                        use App\Models\Cart;$cart = Cart::all()->count();
+                    use Illuminate\Support\Facades\Auth;
+                    use App\Models\Cart;
+                    if(Auth::user())
+                    {
+                    $user_id = Auth::user()->id;
+                    $cart = Cart::where('user_id',$user_id)->count();
+
+                    }
+                    else{
+                    $cart =0;
+                    }
                     @endphp
-                    <h4>cart({{$cart}})</h4>
+                    <a href="viewCart"> <h5>cart({{$cart}})</h5></a>
                 </div>
 
                 <div>
