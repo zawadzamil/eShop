@@ -27,6 +27,7 @@
     <link href="public/mainAsset/css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="public/mainAsset/css/responsive.css" rel="stylesheet" />
+    @livewireStyles
 </head>
 
 <body>
@@ -188,6 +189,7 @@
 </script>
 
 </body>
+@livewireScripts
 </body>
 
 </html>

@@ -23,7 +23,7 @@ class FeaturedController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**

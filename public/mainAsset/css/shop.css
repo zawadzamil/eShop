@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.my-color {
+    background-color: #e5e5e5;
+}
+
+.section-body {
+    margin-top: 50px;
+}
+
+.custom-card-img {
+    height: 200px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+
+
+}
+
+.my-card-space {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.checked {
+    color: orange;
+}
+
+.wrapper {
+
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+
+}
+
+.title-name {
+    font-size: 25px;
+    font-weight: 600;
+    color: #161616;
+}
+
+.my-card {
+    border: none !important;
+}
+
+.desc-size {
+    height: 53px;
+    font-size: small;
+    color: rgba(41, 39, 39, 0.705);
+    overflow: hidden;
+}
+
+.favourite-logo {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.add-to-card-button {
+
+
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+    background: linear-gradient(45deg, transparent 5%, #0087f6c0 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 2px;
+    line-height: 35px;
+
+    box-shadow: 5px 0px 0px #727577;
+    outline: transparent;
+    position: relative;
+
+}
+
+.add-to-card-button:hover {
+    background: linear-gradient(45deg, transparent 5%, #ff7863bd 5%);
+
+    box-shadow: 5px 0px 0px #0087f6c0;
+}
+
+.color-price {
+
+    margin-top: 5px;
+    font-size: 25px;
+    font-weight: 600;
+    color: #707070;
+}

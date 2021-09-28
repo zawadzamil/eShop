@@ -398,85 +398,46 @@
   <!-- brand section -->
 
   <section class="brand_section">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Featured Brands
-        </h2>
+      <div class="container">
+          <div class="heading_container">
+              <h2>
+                  Featured Brands
+              </h2>
+          </div>
+          <div class="brand_container layout_padding2">
+
+              @foreach($featureds as $featured)
+                  <div class="box">
+                      <a href="">
+                          <div class="new">
+                              <h5>
+                                  New
+                              </h5>
+                          </div>
+                          <div class="img-box">
+                              <img
+                                  src="public/images/{{\App\Models\Product::where('id',$featured-product_id)->value('image')}}"
+                                  alt="" border="3" height="100" width="100"/>
+                          </div>
+                          <div class="detail-box">
+                              <h6 class="price">
+                                  PriceXXXXXX
+                              </h6>
+                              <h6>
+                                  Chair
+                              </h6>
+                          </div>
+                      </a>
+                  </div>
+              @endforeach
+
+          </div>
+          <a href="" class="brand-btn">
+              See More
+          </a>
       </div>
-      <div class="brand_container layout_padding2">
-        <div class="box">
-          <a href="">
-            <div class="new">
-              <h5>
-                New
-              </h5>
-            </div>
-            <div class="img-box">
-              <img src="public/mainAsset/images/slider-img.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h6 class="price">
-                $100
-              </h6>
-              <h6>
-                Chair
-              </h6>
-            </div>
-          </a>
-        </div>
-        <div class="box">
-          <a href="">
-            <div class="img-box">
-              <img src="public/mainAsset/images/slider-img.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h6 class="price">
-                $100
-              </h6>
-              <h6>
-                Chair
-              </h6>
-            </div>
-          </a>
-        </div>
-        <div class="box">
-          <a href="">
-            <div class="img-box">
-              <img src="public/mainAsset/images/slider-img.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h6 class="price">
-                $100
-              </h6>
-              <h6>
-                Chair
-              </h6>
-            </div>
-          </a>
-        </div>
-        <div class="box">
-          <a href="">
-            <div class="img-box">
-              <img src="public/mainAsset/images/slider-img.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h6 class="price">
-                $100
-              </h6>
-              <h6>
-                Chair
-              </h6>
-            </div>
-          </a>
-        </div>
-      </div>
-      <a href="" class="brand-btn">
-        See More
-      </a>
-    </div>
   </section>
-    @endsection
+@endsection
 
 
 

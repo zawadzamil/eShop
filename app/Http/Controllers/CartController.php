@@ -62,7 +62,7 @@ class CartController extends Controller
         $carts = Cart::where('user_id',$id)->get();
 
 
-        return view('showCartItems')->with('carts',$carts);
+        return view('showCartItem')->with('carts', $carts);
 
     }
 
@@ -84,9 +84,12 @@ class CartController extends Controller
      * @param \App\Models\Cart $cart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cart $cart)
+    public function update(Request $request, $id)
     {
-        //
+        $update = Cart::find($id);
+        $update->quantity = $request->get('quantity');
+        $update->save();
+        return redirect()->route('viewCart');
     }
 
     /**
@@ -99,4 +102,6 @@ class CartController extends Controller
     {
         //
     }
+
+
 }

@@ -404,72 +404,36 @@
                     Featured Brands
                 </h2>
             </div>
+            @php
+                $featureds = \App\Models\Featured::all();
+            @endphp
             <div class="brand_container layout_padding2">
-                <div class="box">
-                    <a href="">
-                        <div class="new">
-                            <h5>
-                                New
-                            </h5>
-                        </div>
-                        <div class="img-box">
-                            <img src="public/mainAsset/images/slider-img.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6 class="price">
-                                $100
-                            </h6>
-                            <h6>
-                                Chair
-                            </h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="public/mainAsset/images/slider-img.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6 class="price">
-                                $100
-                            </h6>
-                            <h6>
-                                Chair
-                            </h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="public/mainAsset/images/slider-img.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6 class="price">
-                                $100
-                            </h6>
-                            <h6>
-                                Chair
-                            </h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="box">
-                    <a href="">
-                        <div class="img-box">
-                            <img src="public/mainAsset/images/slider-img.png" alt="">
-                        </div>
-                        <div class="detail-box">
-                            <h6 class="price">
-                                $100
-                            </h6>
-                            <h6>
-                                Chair
-                            </h6>
-                        </div>
-                    </a>
-                </div>
+                @foreach($featureds as $featured)
+                    <div class="box">
+                        <a href="{{route('showProduct',$featured->product_id)}}">
+                            <div class="new">
+                                <h5>
+                                    New
+                                </h5>
+                            </div>
+                            <div class="img-box">
+                                <img
+                                    src="public/images/{{\App\Models\Product::where('id',$featured->product_id)->value('image')}}"
+                                    alt="" border="3" height="100" width="100"/>
+                            </div>
+                            <div class="detail-box">
+                                <h6 class="price" style="margin-top: 2%;">
+                                    {{\App\Models\Product::where('id',$featured->product_id)->value('offer_price')}}
+                                    &#2547;
+                                </h6>
+                                <h6>
+                                    {{\App\Models\Product::where('id',$featured->product_id)->value('name')}}
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+
             </div>
             <a href="" class="brand-btn">
                 See More

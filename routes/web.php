@@ -42,12 +42,12 @@ Route::get('users/users', 'App\Http\Controllers\DashboardController@showUser')->
 
 
 Route::post('addToCart', 'App\Http\Controllers\CartController@store')->name('addToCart');
-Route::get('viewCart', 'App\Http\Controllers\CartController@show');
+Route::get('viewCart', 'App\Http\Controllers\CartController@show')->name('viewCart');
+Route::post('updateCart/{id}', 'App\Http\Controllers\CartController@update');
 
 
-
-Route::get('checkout','App\Http\Controllers\CheckoutController@checkout');
-Route::post('checkout','App\Http\Controllers\CheckoutController@afterpayment')->name('checkout.credit-card');
+Route::get('checkout', 'App\Http\Controllers\CheckoutController@checkout');
+Route::post('checkout', 'App\Http\Controllers\CheckoutController@afterpayment')->name('checkout.credit-card');
 
 
 //auth route for both

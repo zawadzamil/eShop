@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    background: #e5e5e5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+}
+
+.card-item-dislay {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+    width: 80%;
+
+
+}
+
+.card-inside-color {
+
+    background: #e5e5e5;
+
+}
+
+.card-button {
+    color: #0a86da;
+    width: 230px;
+    height: 42px;
+
+    outline: none;
+    border: none;
+    font-size: 18px;
+    display: block;
+    cursor: pointer;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 4px 4px 12px #c0c0c0,
+    -4px -4px 12px #fff;
+
+}
+
+.card-button:hover {
+    color: #f95052;
+
+
+}
+
+.wrapper {
+
+    background: #e5e5e5;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    box-shadow: 4px 4px 12px #c0c0c0,
+    -4px -4px 12px #fff;
+}
+
+.check-button {
+    color: #0a86da;
+    width: 50%;
+    height: 50px;
+    border: none;
+    font-weight: 900;
+    font-size: 30px;
+    background: #e5e5e5;
+    border-radius: 10px;
+
+    box-shadow: 4px 4px 12px #b1b1b1,
+    -8px -8px 12px #fff;
+
+
+}
+
+.check-button:focus {
+    outline: none;
+
+}
+
+.check-button:hover {
+    background: #0a86da;
+    color: #fff;
+    box-shadow: 4px 4px 12px #b1b1b1,
+    -8px -8px 12px #fff;
+}
+
+hr {
+    border: 1px solid rgba(0, 0, 0, 0.185);
+}
+

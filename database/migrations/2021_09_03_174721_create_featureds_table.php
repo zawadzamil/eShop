@@ -14,7 +14,8 @@ class CreateFeaturedsTable extends Migration
     public function up()
     {
         Schema::create('featureds', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('product_id');
             $table->timestamps();
         });
     }
