@@ -23,17 +23,17 @@
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Brand Name</label>
-                <input type="text" name="name" class="form-control" id="name" required>
+                <input type="text" name="name" class="form-control" id="name" maxlength="40" required>
 
 
                 <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
-                    <input type="file" name="image" class="form-control" id="image" required>
+                    <input type="file" name="image" class="form-control" id="image"  required>
                 </div>
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea name="description" class="form-control" id="description"></textarea>
+                    <textarea name="description" class="form-control" id="description" maxlength="500"></textarea>
                 </div>
 
 

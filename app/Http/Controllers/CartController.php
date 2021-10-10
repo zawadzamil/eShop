@@ -89,7 +89,7 @@ class CartController extends Controller
         $update = Cart::find($id);
         $update->quantity = $request->get('quantity');
         $update->save();
-        return redirect()->route('viewCart');
+        return redirect()->route('viewCart')->with('success','Product Quantity Edited!');
     }
 
     /**
@@ -98,9 +98,11 @@ class CartController extends Controller
      * @param \App\Models\Cart $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
     {
-        //
+       Cart::destroy($id);
+       return redirect()->route('viewCart')->with('failed','Product Removed From Cart');
+
     }
 
 

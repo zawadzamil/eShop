@@ -44,6 +44,7 @@ Route::get('users/users', 'App\Http\Controllers\DashboardController@showUser')->
 Route::post('addToCart', 'App\Http\Controllers\CartController@store')->name('addToCart');
 Route::get('viewCart', 'App\Http\Controllers\CartController@show')->name('viewCart');
 Route::post('updateCart/{id}', 'App\Http\Controllers\CartController@update');
+Route::get('delete_cart_item/{id}', 'App\Http\Controllers\CartController@destroy')->name('delete_cart_item');
 
 
 Route::get('checkout', 'App\Http\Controllers\CheckoutController@checkout');
