@@ -245,6 +245,11 @@
                                                     class="fa fa-user"> </i> <span
                                                     class="font-bold">Users</span> </a>
                                         </li>
+                                        <li class="">
+                                            <a href="{{route('orders')}}" class="auto"> <i
+                                                    class="fa fa-truck"> </i> <span
+                                                    class="font-bold">Orders</span> </a>
+                                        </li>
 
                                         </li>
                                     </ul>

@@ -12,7 +12,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Digitf</title>
+    <title>E-Furniture</title>
 
 
     <!-- slider stylesheet -->
@@ -41,7 +41,7 @@
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg custom_nav-container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="public/mainAsset/images/logo.png" alt="" />
+                    <img src="public/mainAsset/images/logon.PNG" alt="" style="width: 40%;" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -65,16 +65,49 @@
 
                     </ul>
                     <div class="user_option">
-                        <a href="">
+                        @if(Auth::user())
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+
+                                <a href="route('logout')"
+                                   onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </a>
+                            </form>
+
+                        @endif
+
+                        <a href="{{url('login')}}">
                             <img src="public/mainAsset/images/user.png" alt="">
                             <span>
                                     Login
                                 </span>
                         </a>
+
                         <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                             <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
                         </form>
                     </div>
+                    @php
+
+                        use Illuminate\Support\Facades\Auth;
+                         use App\Models\Cart;
+                        if(Auth::user())
+                            {
+                                 $user_id = Auth::user()->id;
+                                $cart = Cart::where('user_id',$user_id)->count();
+
+                            }
+                       else{
+                           $cart =0;
+                       }
+
+                    @endphp
+                    @if(Illuminate\Support\Facades\Auth::user())
+                        <a href="viewCart"> <h5>cart({{$cart}})</h5></a>
+                    @else <a href="login"> <h5>cart({{$cart}})</h5></a>
+                    @endif
                 </div>
                 <div>
                     <div class="custom_menu-btn ">

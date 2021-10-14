@@ -103,4 +103,12 @@ class DashboardController extends Controller
             }
 
     }
+    public function showOrders()
+    {
+        if (Auth::user()->hasRole('admin')) {
+
+            return view('orders.orders');
+            }
+
+    }
 }

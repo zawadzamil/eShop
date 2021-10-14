@@ -18,7 +18,7 @@
         <div class="col-md-12">
             <div class="">
                 <!-- Add amount from database here -->
-                <p>You will be charged rs 100</p>
+                <p>You will pay BDT  {{$payment_intent['amount']}}</p>
             </div>
             <div class="card">
                 <form action="{{route('checkout.credit-card')}}"  method="post" id="payment-form">

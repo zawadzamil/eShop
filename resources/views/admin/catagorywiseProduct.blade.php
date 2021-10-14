@@ -221,6 +221,49 @@
                                             @endforeach
                                         </ul>
                                     </li>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="auto"> <span class="pull-right text-muted"> <i
+                                                    class="fa fa-chevron-down"></i> <i
+                                                    class="i i-circle-sm text-active"></i> </span> <b
+                                                class="badge bg-danger pull-right"></b> <i
+                                                class="fa fa-tags"> </i> <span
+                                                class="font-bold">Brands</span> </a>
+                                        <ul class="nav dk">
+                                            <li>
+                                                <a href="{{route('showBrands')}}"
+                                                   class="auto"> <i class="fa fa-bolt"></i>
+                                                    <span>View All Brands</span> </a>
+
+
+                                            </li>
+                                            <li>
+                                                <a href="{{route('create_brand')}}"
+                                                   class="auto"> <i class="fa fa-bolt"></i>
+                                                    <span>Add New Brand</span> </a>
+
+
+                                            </li>
+
+
+                                            </li>
+
+
+                                        </ul>
+                                    <li>
+                                        <a href="{{route('showUser')}}" class="auto"> <span
+                                                class="pull-right text-muted">  </span> <b
+                                                class="badge bg-danger pull-right"></b> <i
+                                                class="fa fa-user"> </i> <span
+                                                class="font-bold">Users</span> </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="{{route('orders')}}" class="auto"> <i
+                                                class="fa fa-truck"> </i> <span
+                                                class="font-bold">Orders</span> </a>
+                                    </li>
+
+                                    </li>
 
 
                                 </ul>

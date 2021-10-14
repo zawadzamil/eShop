@@ -27,6 +27,7 @@ Route::get('delete/{id}', 'App\Http\Controllers\ProductController@destroy');
 Route::post('updateProduct/{id}', 'App\Http\Controllers\ProductController@update');
 Route::get('admin/editProduct/{id}', 'App\Http\Controllers\DashboardController@find')->name('editProduct');
 Route::get('show_single_product/{id}', 'App\Http\Controllers\ProductController@show')->name('showProduct');
+Route::get('admin/orders', 'App\Http\Controllers\DashboardController@showOrders')->name('orders');
 
 
 Route::get('admin/catagorywiseProduct/{id}', 'App\Http\Controllers\ProductController@findCatagorywise')->name('catagorywiseProduct');
@@ -47,8 +48,10 @@ Route::post('updateCart/{id}', 'App\Http\Controllers\CartController@update');
 Route::get('delete_cart_item/{id}', 'App\Http\Controllers\CartController@destroy')->name('delete_cart_item');
 
 
-Route::get('checkout', 'App\Http\Controllers\CheckoutController@checkout');
+Route::get('checkout/{total}', 'App\Http\Controllers\CheckoutController@checkout');
+Route::get('checkoutCash', 'App\Http\Controllers\CheckoutController@cashonDelivery');
 Route::post('checkout', 'App\Http\Controllers\CheckoutController@afterpayment')->name('checkout.credit-card');
+Route::post('cashOrder', 'App\Http\Controllers\CheckoutController@cashOrederAdd');
 
 
 //auth route for both

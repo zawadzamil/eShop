@@ -44,37 +44,27 @@
                         </div>
                         <div class="col-xs-4">
                             <div class="padder-v">
-                                <a href="#"> <span class="m-b-xs block"> <i
-                                            class="i i-calendar i-2x text-danger-lt"></i> </span> <small
-                                        class="text-muted">Calendar</small> </a>
+                                <a href="#"> <span class="m-b-xs block"> <i class="i i-calendar i-2x text-danger-lt"></i> </span> <small class="text-muted">Calendar</small> </a>
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="padder-v">
-                                <a href="#"> <span class="m-b-xs block"> <i
-                                            class="i i-map i-2x text-success-lt"></i> </span> <small class="text-muted">Map</small>
-                                </a>
+                                <a href="#"> <span class="m-b-xs block"> <i class="i i-map i-2x text-success-lt"></i> </span> <small class="text-muted">Map</small> </a>
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="padder-v">
-                                <a href="#"> <span class="m-b-xs block"> <i
-                                            class="i i-paperplane i-2x text-info-lt"></i> </span> <small
-                                        class="text-muted">Trainning</small> </a>
+                                <a href="#"> <span class="m-b-xs block"> <i class="i i-paperplane i-2x text-info-lt"></i> </span> <small class="text-muted">Trainning</small> </a>
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="padder-v">
-                                <a href="#"> <span class="m-b-xs block"> <i
-                                            class="i i-images i-2x text-muted"></i> </span> <small class="text-muted">Photos</small>
-                                </a>
+                                <a href="#"> <span class="m-b-xs block"> <i class="i i-images i-2x text-muted"></i> </span> <small class="text-muted">Photos</small> </a>
                             </div>
                         </div>
                         <div class="col-xs-4">
                             <div class="padder-v">
-                                <a href="#"> <span class="m-b-xs block"> <i
-                                            class="i i-clock i-2x text-warning-lter"></i> </span> <small
-                                        class="text-muted">Timeline</small> </a>
+                                <a href="#"> <span class="m-b-xs block"> <i class="i i-clock i-2x text-warning-lter"></i> </span> <small class="text-muted">Timeline</small> </a>
                             </div>
                         </div>
                     </div>
@@ -83,9 +73,7 @@
         </ul>
         <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
             <div class="form-group">
-                <div class="input-group"><span class="input-group-btn"> <button type="submit"
-                                                                                class="btn btn-sm bg-white b-white btn-icon"><i
-                                class="fa fa-search"></i></button> </span>
+                <div class="input-group"> <span class="input-group-btn"> <button type="submit" class="btn btn-sm bg-white b-white btn-icon"><i class="fa fa-search"></i></button> </span>
                     <input type="text" class="form-control input-sm no-border"
                            placeholder="Search apps, projects..."></div>
             </div>
@@ -100,8 +88,7 @@
                                 notifications</strong></div>
                         <div class="list-group list-group-alt">
                             <a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img
-                                        src="{{('../public/admin/images/a0.png')}}" alt="..."
-                                        class="img-circle"> </span>
+                                        src="{{('../public/admin/images/a0.png')}}" alt="..." class="img-circle"> </span>
                                 <span class="media-body block m-b-none"> Use awesome animate.css')}}<br> <small
                                         class="text-muted">10 minutes ago</small> </span> </a>
                             <a href="#" class="media list-group-item"> <span class="media-body block m-b-none"> 1.0 initial released<br> <small
@@ -195,8 +182,7 @@
                                     </li>
                                     <li class="">
                                         <a href="{{url('add_product')}}" class="auto"> <i
-                                                class="fa fa-pencil-square-o"> </i> <span
-                                                class="font-bold">Add Products</span>
+                                                class="fa fa-pencil-square-o"> </i> <span class="font-bold">Add Products</span>
                                         </a>
                                     </li>
                                     <li>
@@ -259,6 +245,11 @@
                                                 class="fa fa-user"> </i> <span
                                                 class="font-bold">Users</span> </a>
                                     </li>
+                                    <li class="">
+                                        <a href="{{route('orders')}}" class="auto"> <i
+                                                class="fa fa-shopping-cart"> </i> <span
+                                                class="font-bold">Orders</span> </a>
+                                    </li>
 
                                     </li>
                                 </ul>
@@ -287,7 +278,13 @@
                             <!-- ADMIN  PANEL SECTION  -->
 
 
+
                             @yield('admin_panel_section')
+
+
+
+
+
 
 
                         </section>
@@ -346,8 +343,7 @@
                 </aside>
                 <!-- / side content -->
             </section>
-            <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open"
-               data-target="#nav,html"></a>
+            <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
         </section>
 
 

@@ -41,9 +41,9 @@
                                                       ............end Review Section ..............
 --}}
                         @if(($product->price)==($product->offer_price))
-                        <p class="my-card-space color-price text-end">{{$product->price}}</p>
+                        <p class="my-card-space color-price text-end">&#2547;{{$product->price}}</p>
                             @else
-                            <p class="my-card-space color-price text-end"><strike>{{$product->price}}</strike> {{$product->offer_price}}</p>
+                            <p class="my-card-space color-price text-end"><strike>&#2547;{{$product->price}}</strike> {{$product->offer_price}}</p>
 
                         @endif
                         <br>

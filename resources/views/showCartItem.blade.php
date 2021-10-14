@@ -121,6 +121,11 @@ foreach ($carts as $cart)
     }
         @endphp
 
+        @php
+        $totalAmo = $total+$delevary_cost;
+           Session::put('totalAmo',$totalAmo);
+        @endphp
+
 
     </div>
     <!-- brand section -->
@@ -133,8 +138,8 @@ foreach ($carts as $cart)
                 <div class="summary-item"><span class="text">Discount</span><span class="price">&#2547;0</span></div>
                 <div class="summary-item"><span class="text">Shipping</span><span class="price">&#2547;{{$delevary_cost}}</span></div>
                 <div class="summary-item"><span class="text">Total</span><span class="price">&#2547; {{$total + $delevary_cost}}</span></div>
-                <button type="button" class="btn btn-primary btn-lg btn-block">Online Payment</button>
-                <button type="button" class="btn btn-primary btn-lg btn-block">Cash On Delivary</button>
+              <a href="checkoutCash"> <button type="button" class="btn btn-primary btn-lg btn-block">Cash On Delivery</button></a>
+              <a href="checkout/{{$total + $delevary_cost}}" ><button type="button" class="btn btn-primary btn-lg btn-block">Online Payment</button></a>
             </div>
 
         </div>
